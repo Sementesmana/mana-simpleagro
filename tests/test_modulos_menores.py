@@ -9,7 +9,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from mana_habilidade_simpleagro import (
+from mana_simpleagro import (
     CatalogAPI,
     CompaniesAPI,
     ErpAPI,
@@ -20,7 +20,7 @@ from mana_habilidade_simpleagro import (
     SafrasAPI,
     WalletsAPI,
 )
-from mana_habilidade_simpleagro.client import SimpleAgroClient
+from mana_simpleagro.client import SimpleAgroClient
 
 
 @pytest.fixture

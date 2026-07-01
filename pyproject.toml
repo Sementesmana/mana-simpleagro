@@ -1,7 +1,7 @@
 [project]
-name = "mana-habilidade-simpleagro"
-version = "0.1.0"
-description = "SDK oficial do Simple Agro para o ecossistema Maná — login OAuth AdonisJS + auto-relogin, CRUD Orders/Clients/Wallets/Properties, Catálogos, Engine de preço, Geoloc, ERP. Consolida em 1 pacote reusável o padrão espalhado em ~10 agentes. Habilidade canônica da Maná Builder, sub-categoria dados/SDK."
+name = "mana-simpleagro"
+version = "0.1.1"
+description = "SDK oficial do Simple Agro para o ecossistema Maná — login OAuth AdonisJS + auto-relogin, CRUD Orders/Clients/Wallets/Properties, Catálogos, Engine de preço, Geoloc, ERP. Consolida em 1 pacote reusável o padrão espalhado em ~10 agentes. SDK canônico da Maná Builder (Camada 2A) — primeiro publicado."
 readme = "README.md"
 license = { text = "Proprietary" }
 requires-python = ">=3.10"
@@ -36,16 +36,16 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Sementesmana/mana-habilidade-simpleagro"
-Repository = "https://github.com/Sementesmana/mana-habilidade-simpleagro"
-Issues = "https://github.com/Sementesmana/mana-habilidade-simpleagro/issues"
+Homepage = "https://github.com/Sementesmana/mana-simpleagro"
+Repository = "https://github.com/Sementesmana/mana-simpleagro"
+Issues = "https://github.com/Sementesmana/mana-simpleagro/issues"
 
 [build-system]
 requires = ["hatchling>=1.18"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/mana_habilidade_simpleagro"]
+packages = ["src/mana_simpleagro"]
 
 [tool.hatch.build.targets.sdist]
 include = [

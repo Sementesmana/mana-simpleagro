@@ -18,7 +18,7 @@ from .client import SimpleAgroClient
 from .exceptions import ValidationError
 from .helpers import so_digitos
 
-log = logging.getLogger("mana-habilidade-simpleagro.clients")
+log = logging.getLogger("mana-simpleagro.clients")
 
 
 class ClientsAPI:

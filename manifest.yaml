@@ -1,17 +1,17 @@
-# Manifesto da Habilidade — Maná Builder
+# Manifesto do SDK — Maná Builder
 # Ver: ADR 2026-06-26-mana-builder-matriz-cobertura (vault)
 
 # Identidade
-nome: mana-habilidade-simpleagro
+nome: mana-simpleagro
 descricao: SDK oficial do Simple Agro para o ecossistema Maná — login OAuth AdonisJS + auto-relogin, CRUD Orders/Clients/Wallets/Properties, Catálogos, Engine de preço com juros, Geoloc, ERP. Consolida em 1 pacote reusável o padrão espalhado em ~10 agentes. Cobre 100% dos endpoints usados hoje em produção.
-categoria: habilidade
+categoria: sdk
 
 # Ownership
 owner: xayer-mana
 codeowners: [xayer-mana]
 
 # Versão
-versao-atual: 0.1.0
+versao-atual: 0.1.1
 ultima-revisao: 2026-06-30
 
 # Status
@@ -22,9 +22,9 @@ notas-de-migracao:
 
 # Matriz 3D (Maná Builder)
 cadeia: transversal
-sub-categoria-emergente: sdk    # subcategoria irmã de 'dados' (ADR 2026-06-30-stack-dados-mana-builder)
+camada-plataforma-agentica: 2A   # SDKs canônicos (ADR 2026-06-24-plataforma-agentica-mana-5-camadas)
 hierarquia: []
-tipo_artefato: habilidade
+tipo_artefato: sdk
 
 # Relações
 substitui-copias-em:
@@ -62,8 +62,8 @@ auth-padrao: "OAuth AdonisJS (XSRF + POST /api/auth/login)"
 # Distribuição
 registry: git-tag
 url-pacote: ""
-url-repo: https://github.com/Sementesmana/mana-habilidade-simpleagro
-url-instalacao: "git+https://github.com/Sementesmana/mana-habilidade-simpleagro.git@v0.1.0"
+url-repo: https://github.com/Sementesmana/mana-simpleagro
+url-instalacao: "git+https://github.com/Sementesmana/mana-simpleagro.git@v0.1.1"
 
 # Endpoints cobertos (documentação embutida)
 endpoints-cobertos:

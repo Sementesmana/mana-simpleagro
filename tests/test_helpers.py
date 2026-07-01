@@ -1,6 +1,6 @@
 """Testes dos helpers puros."""
 
-from mana_habilidade_simpleagro.helpers import (
+from mana_simpleagro.helpers import (
     extract_name,
     extract_str,
     fmt_data_br,

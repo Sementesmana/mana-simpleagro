@@ -6,14 +6,14 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from mana_habilidade_simpleagro import (
+from mana_simpleagro import (
     NetworkError,
     NotFoundError,
     ServerError,
     UnauthorizedError,
     ValidationError,
 )
-from mana_habilidade_simpleagro.client import SimpleAgroClient
+from mana_simpleagro.client import SimpleAgroClient
 
 
 def _resp(status, body=None):

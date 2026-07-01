@@ -6,12 +6,12 @@ from unittest.mock import MagicMock, patch
 
 
 def test_import_facade():
-    from mana_habilidade_simpleagro import SimpleAgro
+    from mana_simpleagro import SimpleAgro
     assert SimpleAgro is not None
 
 
 def test_facade_instancia_todos_apis(env_completo):
-    from mana_habilidade_simpleagro import SimpleAgro
+    from mana_simpleagro import SimpleAgro
     sa = SimpleAgro()
     assert sa.orders is not None
     assert sa.clients is not None
@@ -26,7 +26,7 @@ def test_facade_instancia_todos_apis(env_completo):
 
 def test_facade_compartilha_client(env_completo):
     """Todas as APIs devem apontar pro mesmo SimpleAgroClient."""
-    from mana_habilidade_simpleagro import SimpleAgro
+    from mana_simpleagro import SimpleAgro
     sa = SimpleAgro()
     assert sa.orders.client is sa.client
     assert sa.clients.client is sa.client
@@ -34,14 +34,14 @@ def test_facade_compartilha_client(env_completo):
 
 
 def test_facade_sobrescreve_env_com_args(env_completo):
-    from mana_habilidade_simpleagro import SimpleAgro
+    from mana_simpleagro import SimpleAgro
     sa = SimpleAgro(safra_id="outra_safra", grupo_id="outro_grupo")
     assert sa.client.safra_id == "outra_safra"
     assert sa.client.grupo_id == "outro_grupo"
 
 
 def test_import_helpers_publicos():
-    from mana_habilidade_simpleagro import (
+    from mana_simpleagro import (
         so_digitos, normalizar_cnpj, normalizar_produto,
         fmt_ptbr, parse_ptbr, parse_coord,
         extract_name, extract_str, sem_acento, fmt_data_br,
@@ -50,7 +50,7 @@ def test_import_helpers_publicos():
 
 
 def test_import_exceptions_publicas():
-    from mana_habilidade_simpleagro import (
+    from mana_simpleagro import (
         SimpleAgroError, ConfigError, LoginError,
         UnauthorizedError, NotFoundError, ValidationError,
         NetworkError, ServerError,
@@ -61,5 +61,5 @@ def test_import_exceptions_publicas():
 
 
 def test_version_publica():
-    from mana_habilidade_simpleagro import __version__
-    assert __version__ == "0.1.0"
+    from mana_simpleagro import __version__
+    assert __version__ == "0.1.1"

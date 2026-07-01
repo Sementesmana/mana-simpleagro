@@ -18,7 +18,7 @@ from .catalog import CatalogAPI
 from .exceptions import NotFoundError
 from .helpers import normalizar_produto, parse_ptbr
 
-log = logging.getLogger("mana-habilidade-simpleagro.pricing")
+log = logging.getLogger("mana-simpleagro.pricing")
 
 
 class PricingAPI:

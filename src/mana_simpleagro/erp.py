@@ -14,7 +14,7 @@ from .client import SimpleAgroClient
 from .helpers import extract_name, so_digitos
 from .orders import OrdersAPI
 
-log = logging.getLogger("mana-habilidade-simpleagro.erp")
+log = logging.getLogger("mana-simpleagro.erp")
 
 
 # Subtipos de erro ERP (classificação por regex — 5 categorias validadas em produção)

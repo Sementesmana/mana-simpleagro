@@ -6,7 +6,7 @@ import time
 
 import pytest
 
-from mana_habilidade_simpleagro import ConfigError, LoginError, SimpleAgroAuth
+from mana_simpleagro import ConfigError, LoginError, SimpleAgroAuth
 
 
 class _FakeSession:

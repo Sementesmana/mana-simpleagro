@@ -23,7 +23,7 @@ from .client import SimpleAgroClient
 from .exceptions import NotFoundError
 from .helpers import normalizar_produto
 
-log = logging.getLogger("mana-habilidade-simpleagro.catalog")
+log = logging.getLogger("mana-simpleagro.catalog")
 
 
 class CatalogAPI:

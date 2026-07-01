@@ -19,7 +19,7 @@ from typing import Any
 
 from .client import SimpleAgroClient
 
-log = logging.getLogger("mana-habilidade-simpleagro.wallets")
+log = logging.getLogger("mana-simpleagro.wallets")
 
 
 class WalletsAPI:

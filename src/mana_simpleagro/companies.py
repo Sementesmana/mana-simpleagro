@@ -14,7 +14,7 @@ from typing import Any
 from .client import SimpleAgroClient
 from .exceptions import NotFoundError
 
-log = logging.getLogger("mana-habilidade-simpleagro.companies")
+log = logging.getLogger("mana-simpleagro.companies")
 
 
 class CompaniesAPI:

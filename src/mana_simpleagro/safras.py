@@ -14,7 +14,7 @@ from typing import Any
 from .client import SimpleAgroClient
 from .exceptions import UnauthorizedError
 
-log = logging.getLogger("mana-habilidade-simpleagro.safras")
+log = logging.getLogger("mana-simpleagro.safras")
 
 
 ENDPOINTS_POSSIVEIS = [

@@ -13,7 +13,7 @@ from .client import SimpleAgroClient
 from .helpers import extract_name, parse_coord, so_digitos
 from .orders import OrdersAPI
 
-log = logging.getLogger("mana-habilidade-simpleagro.geolocation")
+log = logging.getLogger("mana-simpleagro.geolocation")
 
 
 class GeolocationAPI:

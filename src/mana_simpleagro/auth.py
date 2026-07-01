@@ -23,7 +23,7 @@ import requests
 
 from .exceptions import ConfigError, LoginError
 
-log = logging.getLogger("mana-habilidade-simpleagro.auth")
+log = logging.getLogger("mana-simpleagro.auth")
 
 TOKEN_TTL_SEG = 50 * 60   # 50min (JWT expira em ~60min)
 

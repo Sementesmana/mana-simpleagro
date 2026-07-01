@@ -6,8 +6,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from mana_habilidade_simpleagro import ClientsAPI, ValidationError
-from mana_habilidade_simpleagro.client import SimpleAgroClient
+from mana_simpleagro import ClientsAPI, ValidationError
+from mana_simpleagro.client import SimpleAgroClient
 
 
 @pytest.fixture

@@ -1,6 +1,6 @@
-# mana-habilidade-simpleagro
+# mana-simpleagro
 
-> **SDK oficial do Simple Agro para o ecossistema Maná.** Consolida em 1 pacote reusável o padrão de integração com o Simple Agro que estava espalhado em ~10 agentes (login OAuth AdonisJS, CRUD de Orders/Clients/Wallets/Properties, catálogos, engine de preço, geolocalização, erros ERP). Habilidade canônica da [Maná Builder](https://github.com/Sementesmana/plugin-mana-skills), sub-categoria **sdk**.
+> **SDK oficial do Simple Agro para o ecossistema Maná.** Consolida em 1 pacote reusável o padrão de integração com o Simple Agro que estava espalhado em ~10 agentes (login OAuth AdonisJS, CRUD de Orders/Clients/Wallets/Properties, catálogos, engine de preço, geolocalização, erros ERP). SDK canônico da [Maná Builder](https://github.com/Sementesmana/plugin-mana-skills) — **Camada 2A** (clientes completos de sistemas legados).
 
 ## Por que existe
 
@@ -27,7 +27,7 @@ Isso levou a **~8.500 linhas de código SA** duplicadas em 12 arquivos ativos. E
 Distribuição por **git tag** (padrão Maná Builder):
 
 ```bash
-pip install "git+https://github.com/Sementesmana/mana-habilidade-simpleagro.git@v0.1.0"
+pip install "git+https://github.com/Sementesmana/mana-simpleagro.git@v0.1.1"
 ```
 
 Dependência única: `requests>=2.31`.
@@ -45,7 +45,7 @@ SA_GRUPO_ID=610a8b743829fd00385c48c9   # ID grupo Semente de Soja
 ## Uso típico — facade `SimpleAgro`
 
 ```python
-from mana_habilidade_simpleagro import SimpleAgro
+from mana_simpleagro import SimpleAgro
 
 sa = SimpleAgro()  # lê env vars automaticamente
 sa.login()          # opcional — cada request faz login on-demand
@@ -79,7 +79,7 @@ for e in erros_classificados:
 ## Uso avançado — instâncias diretas dos APIs
 
 ```python
-from mana_habilidade_simpleagro import SimpleAgroClient, OrdersAPI, ClientsAPI
+from mana_simpleagro import SimpleAgroClient, OrdersAPI, ClientsAPI
 
 client = SimpleAgroClient()   # lê env
 orders = OrdersAPI(client)
@@ -191,7 +191,7 @@ Consumidor decide se **pseudonimiza** antes de mandar pro LLM. Use [`mana-habili
 
 ## Estado
 
-**v0.1.0** (2026-06-30) — primeira release.
+**v0.1.1** (2026-06-30) — primeira release oficial como SDK (rename de mana-habilidade-simpleagro).
 
 - ✅ 14 módulos, 817 statements
 - ✅ **116 testes pytest, 82% cobertura**

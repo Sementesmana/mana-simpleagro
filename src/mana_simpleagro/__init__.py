@@ -1,5 +1,5 @@
 """
-mana-habilidade-simpleagro — SDK oficial do Simple Agro para o ecossistema Maná.
+mana-simpleagro — SDK oficial do Simple Agro para o ecossistema Maná.
 
 Consolida em 1 pacote reutilizável o padrão que estava copiado em ~10 agentes:
     - Login OAuth AdonisJS + XSRF + cache token 50min
@@ -16,7 +16,7 @@ USO TÍPICO
 
   # Config via env vars (recomendado):
   #   SA_BASE_URL, SA_USERNAME, SA_PASSWORD, SA_SAFRA_ID, SA_GRUPO_ID
-  >>> from mana_habilidade_simpleagro import SimpleAgro
+  >>> from mana_simpleagro import SimpleAgro
   >>> sa = SimpleAgro()
   >>> sa.login()
 
@@ -46,7 +46,7 @@ USO TÍPICO
 
 USO AVANÇADO — instâncias diretas dos APIs
 
-  >>> from mana_habilidade_simpleagro import SimpleAgroClient, OrdersAPI
+  >>> from mana_simpleagro import SimpleAgroClient, OrdersAPI
   >>> client = SimpleAgroClient()  # lê env
   >>> orders = OrdersAPI(client)
   >>> orders.list()
@@ -54,7 +54,7 @@ USO AVANÇADO — instâncias diretas dos APIs
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # ── Exceções ────────────────────────────────────────────────────────
 from .exceptions import (

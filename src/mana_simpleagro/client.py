@@ -24,7 +24,7 @@ from .exceptions import (
     ValidationError,
 )
 
-log = logging.getLogger("mana-habilidade-simpleagro.client")
+log = logging.getLogger("mana-simpleagro.client")
 
 TIMEOUT_DEFAULT = 30
 

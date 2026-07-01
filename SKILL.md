@@ -1,7 +1,7 @@
 ---
 name: simpleagro
 description: >-
-  SDK oficial do Simple Agro para o ecossistema Maná. Habilidade canônica da
+  SDK oficial do Simple Agro para o ecossistema Maná. SDK canônico da
   Maná Builder que consolida em 1 pacote reusável ~8.500 linhas de código SA
   espalhadas em 10 agentes: login OAuth AdonisJS + auto-relogin em 401, CRUD
   de Orders/Clients/Wallets/Properties, catálogos (Product Groups, Price Tables,
@@ -12,10 +12,10 @@ description: >-
   cópia inline de sa_client.py pra habilidade central, adicionar novo agente
   que faz login SA, precisar de preço com juros, listar pedidos com erro ERP,
   extrair coordenadas de pedidos, criar cliente novo, cadastrar propriedade,
-  ver carteira do vendedor. Camada 2C da Maná Builder, sub-categoria SDK.
+  ver carteira do vendedor. Camada 2A da Maná Builder — SDK canônico de sistema legado.
 ---
 
-# Habilidade — SDK Simple Agro (agora oficial da Maná Builder)
+# SDK Simple Agro — Maná Builder Camada 2A
 
 > **Ponte oficial de leitura+escrita entre agentes Maná e o Simple Agro.**
 > Antes: cada agente reimplementava login+XSRF+retry+parse+preço. Agora: 1 import.
@@ -33,13 +33,13 @@ description: >-
 
 ```python
 # 1. Instalar
-# pip install "git+https://github.com/Sementesmana/mana-habilidade-simpleagro.git@v0.1.0"
+# pip install "git+https://github.com/Sementesmana/mana-simpleagro.git@v0.1.1"
 
 # 2. Setar env vars
 #    SA_BASE_URL, SA_USERNAME, SA_PASSWORD, SA_SAFRA_ID, SA_GRUPO_ID
 
 # 3. Usar
-from mana_habilidade_simpleagro import SimpleAgro
+from mana_simpleagro import SimpleAgro
 sa = SimpleAgro()
 sa.login()   # opcional; on-demand em cada request
 
@@ -98,7 +98,7 @@ Antes de duplicar código no agente:
 
 ## Recursos
 
-- **Repo:** https://github.com/Sementesmana/mana-habilidade-simpleagro
+- **Repo:** https://github.com/Sementesmana/mana-simpleagro
 - **README completo:** [README.md](./README.md)
-- **Nota vault:** `ManaVault/06-Agentes-e-Skills/habilidades/simpleagro.md`
+- **Nota vault:** `ManaVault/06-Agentes-e-Skills/sdks/simpleagro.md`
 - **ADRs:** Maná Builder (2026-06-26), Stack dados (2026-06-30)

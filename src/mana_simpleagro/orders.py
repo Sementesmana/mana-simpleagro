@@ -21,7 +21,7 @@ from typing import Any
 from .client import SimpleAgroClient
 from .exceptions import ValidationError
 
-log = logging.getLogger("mana-habilidade-simpleagro.orders")
+log = logging.getLogger("mana-simpleagro.orders")
 
 
 class OrdersAPI:
