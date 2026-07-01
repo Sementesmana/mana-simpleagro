@@ -1,0 +1,131 @@
+# Manifesto da Habilidade — Maná Builder
+# Ver: ADR 2026-06-26-mana-builder-matriz-cobertura (vault)
+
+# Identidade
+nome: mana-habilidade-simpleagro
+descricao: SDK oficial do Simple Agro para o ecossistema Maná — login OAuth AdonisJS + auto-relogin, CRUD Orders/Clients/Wallets/Properties, Catálogos, Engine de preço com juros, Geoloc, ERP. Consolida em 1 pacote reusável o padrão espalhado em ~10 agentes. Cobre 100% dos endpoints usados hoje em produção.
+categoria: habilidade
+
+# Ownership
+owner: xayer-mana
+codeowners: [xayer-mana]
+
+# Versão
+versao-atual: 0.1.0
+ultima-revisao: 2026-06-30
+
+# Status
+status: alpha
+consumidores-migrados: []
+notas-de-migracao:
+  - "2026-06-30: extração inicial consolidando ~8500 linhas de código SA espalhadas por 12 arquivos ativos em ~10 agentes (agente-financeiro-sa, agente-pedidos, agente-lancamento-pedido, agente-tms, agente-gestor-comercial, agente-premiacao, agente-mapa-pedidos, agente-bot-multiplicacao, etc). 14 módulos, 817 statements, 116 testes pytest com 82% cobertura."
+
+# Matriz 3D (Maná Builder)
+cadeia: transversal
+sub-categoria-emergente: sdk    # subcategoria irmã de 'dados' (ADR 2026-06-30-stack-dados-mana-builder)
+hierarquia: []
+tipo_artefato: habilidade
+
+# Relações
+substitui-copias-em:
+  - agente-pedidos               # agente_simpleagro.py (1391 linhas)
+  - agente-financeiro-sa         # agente_financeiro_sa.py (1162 linhas)
+  - agente-lancamento-pedido     # sa_client.py (624 linhas)
+  - agente-tms                   # agente_tms.py (611 linhas)
+  - agente-bot-multiplicacao     # sa_client.py (343 linhas)
+  - agente-premiacao             # sa_client.py (300 linhas)
+  - agente-mapa-pedidos          # sa_client.py (285 linhas)
+  - agente-gestor-comercial      # coordenadas_sa.py + erros_erp_sa.py (268 linhas)
+  - agente-estoque               # partes de app.py
+consumidores: []
+consumidores-planejados:
+  - dayan/app-novo-2026-07-01
+  - agente-pedidos
+  - agente-financeiro-sa
+  - agente-lancamento-pedido
+  - agente-tms
+  - agente-bot-multiplicacao
+  - agente-premiacao
+  - agente-mapa-pedidos
+  - agente-gestor-comercial
+
+# Dependências
+deps-hard: [requests>=2.31]
+deps-opcionais: []
+binarios-sistema: []
+
+# Provider externo
+provider-externo: simple-agro-api-adonisjs
+url-provider: "https://sementesmana.api.simpleagro.com.br:3333"
+auth-padrao: "OAuth AdonisJS (XSRF + POST /api/auth/login)"
+
+# Distribuição
+registry: git-tag
+url-pacote: ""
+url-repo: https://github.com/Sementesmana/mana-habilidade-simpleagro
+url-instalacao: "git+https://github.com/Sementesmana/mana-habilidade-simpleagro.git@v0.1.0"
+
+# Endpoints cobertos (documentação embutida)
+endpoints-cobertos:
+  auth:
+    - "POST /api/auth/login"
+  orders:
+    - "GET /api/orders (list, filtros safra/grupo/status_erp)"
+    - "GET /api/orders/{id}"
+    - "POST /api/orders (criar cabeçalho)"
+    - "POST /api/orders/{id}/items (adicionar item)"
+    - "PUT /api/orders/{id}/items/{item_id} (recalc)"
+    - "PUT /api/orders/{id}/payment (parcelas + itens)"
+    - "PATCH /api/orders/{id}/status"
+  clients:
+    - "GET /api/clients (busca por CPF/CNPJ ou nome regex)"
+    - "GET /api/clients/{id}"
+    - "POST /api/clients (multipart FormData)"
+    - "GET /api/clients/{id}/properties"
+    - "POST /api/clients/{id}/properties"
+  wallets:
+    - "GET /api/customers-wallets"
+    - "GET /api/customers-wallets/{id}"
+    - "GET /api/customers-wallets/get-consultant/{cliente_id}"
+    - "PUT /api/customers-wallets/{id} (documento inteiro)"
+  catalog:
+    - "GET /api/productgroups/{id}"
+    - "GET /api/price-table"
+    - "GET /api/price-table.mobile"
+    - "GET /api/feature-table-prices (TSI)"
+    - "GET /api/types-of-warranty"
+    - "GET /api/types-of-sale"
+    - "GET /api/form-of-payment"
+    - "GET /api/seed-use"
+  companies:
+    - "GET /api/companies (filial_faturamento)"
+  safras:
+    - "GET /api/safras (+ fallbacks)"
+
+# LGPD
+toca-pii: true    # SA armazena CPF/CNPJ, nome, telefone, endereço; consumidor pseudonimiza antes do LLM
+
+# ADRs aplicáveis
+adrs:
+  - 2026-06-24-plataforma-agentica-mana-5-camadas
+  - 2026-06-26-mana-builder-matriz-cobertura
+  - 2026-06-26-fluxo-criacao-habilidade-mana-builder
+  - 2026-06-26-distribuicao-via-git-tag-pacotes-mana-builder
+  - 2026-06-26-plugin-mana-skills-cowork
+  - 2026-06-28-habilidade-canonica-gate-consumidor-real
+  - 2026-06-30-stack-dados-mana-builder
+
+# Tags
+tags:
+  - simple-agro
+  - simpleagro
+  - sdk
+  - client
+  - oauth
+  - adonisjs
+  - orders
+  - clients
+  - pricing
+  - erp
+  - mana-builder
+  - transversal
